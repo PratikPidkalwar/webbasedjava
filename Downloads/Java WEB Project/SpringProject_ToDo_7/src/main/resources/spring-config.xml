@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Registering bean of type HelloService with some ID: myBean -->
+	
+	
+	<bean id="setCourse" class="ToDo_7.CourseGreeting">
+		<property name="courseId" value="101"/>
+		<property name="name" value="Java"/>
+		<property name="duration" value="55"/>
+		<property name="provider" value="Udemy"/>
+		<property name="fees" value="55000"/>
+	</bean>
+	
+	<bean id="constructCourse" class="ToDo_7.CourseGreeting">
+		<constructor-arg value="102"/>
+		<constructor-arg value="Python"/>
+		<constructor-arg value="65"/>
+		<constructor-arg value="Un-Stop"/>
+		<constructor-arg value="45000"/>
+	</bean>
+	
+</beans>

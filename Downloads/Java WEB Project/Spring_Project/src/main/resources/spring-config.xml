@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Registering bean of type HelloService with some ID: myBean -->
+	<bean id="myBean" class="day_7.WelcomeService"/>
+	<bean id="myBean2" class="day_7.HelloService"/>
+	
+	<bean id="myBean3" class="day_8.UserService" lazy-init="true"/>
+	<bean id="myBean4" class="day_8.UserService"/>
+	<bean id="myBean5" class="day_8.UserService" scope="prototype"/>
+	
+	<bean id="myBean6" class="day_8.UserGreetingService">
+		
+		<property name="userName" value="Tom Cruise"/>
+		<property name="greetingMessage" value="Good Night"/>
+		<property name="userAge" value="59"/>
+		
+	</bean>
+	
+	<bean id="myBean7" class="day_8.UserGreetingService">
+		
+		<constructor-arg value="Tom Cruise"/>
+		<constructor-arg value="Hello"/>
+		<constructor-arg value="60"/>
+		
+	</bean>
+	
+	
+	<bean id="myBean8" class="day_8.UserGreetingService">
+		
+		<constructor-arg value="55" index="1"/>
+		<constructor-arg value="Tom Cruise" index="2"/>
+		<constructor-arg value="Good Morning" index="0"/>
+	</bean>
+	
+	<bean id="myCustomer" class="day_8.Customer">
+		<property name="customerId" value="1245"/>
+		<property name="name" value="Rushikesh"/>
+		<property name="permanentAddress" ref="myAddress2"/>
+	</bean>
+	
+	<bean id="myAddress" class="day_8.Address">
+		<property name="city" value="Pune"/>
+		<property name="pincode" value="401045"/>
+	</bean>
+	
+		
+    <bean id="myAddress2" class="day_8.Address">
+		<property name="city" value="Mumbai"/>
+		<property name="pincode" value="400034"/>
+	</bean>
+	
+	
+</beans>
